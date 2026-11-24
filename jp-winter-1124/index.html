@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>일본 겨울 소재 성과</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: 소재 만든 사람에게 건네는 짧은 성적표. 차분하고 정확하게.
+   IDEA: 소재를 열로 세운 비교표. 위에서 아래로 같은 지표를 한 줄씩 나란히 읽는다.
+   PICTURE: 세로 영상 썸네일 4장이 표 머리에 나란히, 각 지표 줄 안에 같은 축의 막대.
+   COLOUR and TYPE: 눈빛 흰 바탕, 짙은 잉크, 얼음 파랑(겨울 소재), 회색(기존 기준선), 그 줄의 1등만 초록 표시. IBM Plex Sans KR.
+   LAYOUT: 결론 제목 → 숫자 4개 → 소재 비교표(머리 고정 첫 열) → 읽는 법 두 칸 → 다음 일정. */
+:root{color-scheme:light dark;--bg:light-dark(#f7f9fb,#0f141b);--card:light-dark(#fff,#161d27);--ink:light-dark(#121a24,#e7edf4);--sub:light-dark(#5b6675,#9aa6b5);--line:light-dark(#e3e8ee,#263140);--ice:light-dark(#2563c9,#79a7ff);--iceb:light-dark(#eef4ff,#18243a);--gray:light-dark(#b8c1cc,#4a5666);--good:light-dark(#047857,#4ade80);--goodb:light-dark(#e7f8ef,#12301f);--warm:light-dark(#b45309,#ffa257)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "IBM Plex Sans KR","Apple SD Gothic Neo",sans-serif;overflow-x:clip}
+.band{padding:clamp(22px,3.5vw,44px) max(4vw,16px);max-width:1240px;margin:0 auto}
+h1{font-size:clamp(26px,3.6vw,40px);line-height:1.15;margin:0 0 10px;text-wrap:balance;font-weight:700}
+h2{font-size:21px;margin:0 0 12px;font-weight:700}
+.lead{color:var(--sub);margin:0;max-width:780px;font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.k{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.k .l{font-size:13px;color:var(--sub)}.k .v{font-size:clamp(21px,2.4vw,27px);font-weight:700;white-space:nowrap}.k .s{font-size:13px;color:var(--sub)}
+.wrap{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow-x:auto}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;table-layout:fixed}
+th,td{padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line);text-align:left}
+tr:last-child td{border-bottom:0}
+th.rl,td.rl{position:sticky;left:0;background:var(--card);width:118px;font-size:13px;color:var(--sub);font-weight:600;z-index:1}
+thead th{vertical-align:bottom}
+col.w{background:var(--iceb)}
+.hd{display:flex;flex-direction:column;gap:6px}
+.hd video{width:100%;max-width:170px;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;background:#000}
+.nm{font-size:17px;font-weight:700}.nm small{display:block;font-size:13px;font-weight:600;color:var(--sub)}
+.pill{display:inline-block;font-size:12.5px;font-weight:700;border-radius:6px;padding:1px 7px;background:var(--line);color:var(--sub);width:max-content}
+.pill.top{background:var(--goodb);color:var(--good)}
+.txt{font-size:14px;color:var(--sub)}
+.cap{font-size:13px;color:var(--sub);border-left:3px solid var(--line);padding-left:8px}
+.m{font-size:18px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.m.dim{color:var(--sub);font-weight:400;font-size:16px}
+.m .b{font-size:12px;font-weight:700;color:var(--good)}
+.bar{height:8px;border-radius:0 4px 4px 0;background:var(--gray);margin-top:6px}
+.bar.w{background:var(--ice)}
+.hint{font-size:12.5px;color:var(--sub);font-weight:400;display:block}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.box h3{font-size:16px;margin:0 0 6px}
+ul{margin:0;padding-left:20px}li{margin:4px 0;font-size:15px}
+.note{font-size:13px;color:var(--sub);margin-top:10px}
+.tl{display:flex;gap:10px;flex-wrap:wrap}.tl div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}.tl b{display:block}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.two{grid-template-columns:minmax(0,1fr)}th.rl,td.rl{width:84px;padding:10px 8px}th,td{padding:10px 8px}.hd video{max-width:120px}.m{font-size:16px}}
+</style></head><body>
+<div class="band">
+  <h1>겨울 소재 첫 이틀: 겨울1 "아늑한 일상"이 기존 위너보다 클릭률·설치당 비용 모두 앞서요</h1>
+  <p class="lead">일본 메타 광고(인스타·페이스북, iOS, 설치 목적)에 11/22(일) 15시부터 돌린 겨울 소재 3개를, 같은 기간 기존 위너 소재 天気(날씨)와 나란히 놓았어요. 집계: 11/22 15시 ~ 11/24 13시(KST), 메타 기준.</p>
+  <div class="kpis">
+    <div class="k"><div class="l">겨울 캠페인 설치당 비용</div><div class="v">약 563원</div><div class="s">기존 일본 광고 약 637원</div></div>
+    <div class="k"><div class="l">겨울 캠페인 설치</div><div class="v">59건</div><div class="s">광고비 약 3.3만 원</div></div>
+    <div class="k"><div class="l">겨울 캠페인 클릭률</div><div class="v">4.2%</div><div class="s">기존 일본 광고 3.1%</div></div>
+    <div class="k"><div class="l">무료체험(Trial) 시작</div><div class="v">1건</div><div class="s">기존 일본 광고 6건</div></div>
+  </div>
+</div>
+
+<div class="band" style="padding-top:0">
+  <h2>소재별 비교</h2>
+  <div class="wrap"><table id="t"></table></div>
+  <p class="note"><b>모든 숫자는 같은 기간(11/22~11/24 13시, 메타 기준) 기준이에요.</b> 메타는 날짜 단위로 집계해서, 기존 날씨는 11/22 하루 전체, 겨울 3개는 11/22 오후 3시 시작분부터 들어가요. 썸네일을 누르면 소재 영상이 재생돼요. 맨 오른쪽 날씨는 비교용 기존 위너예요(소리 포함). 초록 표시는 그 줄의 1등(설치 10건 이상인 소재만). 흐린 숫자는 표본이 작아 아직 판단할 수 없다는 뜻이에요. 메타는 학습 기간에 반응 좋은 광고에 예산을 몰아서, 겨울2 도시 귀갓길·겨울3 겨울 여행은 아직 노출 기회를 거의 못 받았어요.</p>
+</div>
+
+<div class="band" style="padding-top:0">
+  <div class="two">
+    <div class="box"><h3>지금 말할 수 있는 것</h3><ul>
+      <li><b>겨울1 아늑한 일상</b>은 클릭률 4.4%로 天気(2.8%)보다 높고, 설치당 비용도 약 480원으로 더 싸요.</li>
+      <li><b>겨울3 겨울 여행</b>은 클릭률이 겨울1과 비슷(4.0%)한데 설치가 5건뿐이라 비용 비교는 아직 안 돼요.</li>
+      <li><b>겨울2 도시 귀갓길</b>은 노출 123회뿐이에요. 메타가 거의 안 쓰고 있어요.</li>
+    </ul></div>
+    <div class="box"><h3>아직 모르는 것</h3><ul>
+      <li>가장 중요한 건 설치 뒤 무료체험(Trial)까지 가느냐예요. 겨울 캠페인은 Trial이 아직 1건이라 판단할 수 없어요(기존 광고는 같은 기간 6건).</li>
+      <li>메타는 소재별 Trial 수를 이 방식으로 보여 주지 않아서, 소재 비교는 당분간 클릭·설치 기준이에요.</li>
+      <li>이틀치라 숫자가 많이 흔들려요. 판단은 7일치로 해요.</li>
+    </ul></div>
+  </div>
+</div>
+
+<div class="band" style="padding-top:0">
+  <h2>다음</h2>
+  <div class="tl">
+    <div><b>매일 아침</b>겨울 소재별 숫자 점검</div>
+    <div><b>11/29(일)</b>7일 판독: 겨울 vs 기존 Trial당 비용, 겨울3 겨울 여행의 음악 효과</div>
+    <div><b>판독 뒤</b>잘 되는 소재 방향으로 다음 소재 제작 피드백</div>
+  </div>
+  <p class="note">하루 예산: 겨울 캠페인 1.3만 원, 기존 일본 광고 1.3만 원. 숫자는 메타 광고 관리자 기준이며 앱 실제 데이터와는 조금 다를 수 있어요.</p>
+</div>
+
+<script>
+{
+const A=[
+ {img:"v1.jpg",vid:"w1.mp4",n:"겨울1",al:"아늑한 일상",sub:"광고명 目だけ",w:1,st:"예산 대부분",d:"눈만 내놓고 걷기, 눈토끼, 코코아 눈사람, 설날 오세치까지 이어지는 겨울 일기 몽타주",cap:"目だけ出して歩いた日も、雪だるまがとける前にあわてて撮った一杯も。",music:"신규",imp:4557,ctr:4.39,sp:26117,ins:54,watch:6},
+ {img:"v2.jpg",vid:"w2.mp4",n:"겨울2",al:"도시 귀갓길",sub:"광고명 帰り道",w:1,st:"노출 적음",d:"도쿄타워, 캔커피로 손 녹이기, 편의점 고기만두 반씩 나누기",cap:"缶コーヒーで手を温めた帰り道も、肉まんを半分こした夜も。",music:"신규",imp:123,ctr:0.81,sp:558,ins:0,watch:5},
+ {img:"v3.jpg",vid:"w3.mp4",n:"겨울3",al:"겨울 여행",sub:"광고명 富士山 · 위너 음악",w:1,st:"노출 적음",d:"후지산, 스키, 크리스마스 케이크, 바닷가 첫 해돋이",cap:"何度も振り返った富士山も、「あと一本」が三本になったスキーも。",music:"天気와 같은 음악",imp:958,ctr:3.97,sp:6519,ins:5,watch:4},
+ {img:"v0.jpg",vid:"w0.mp4",n:"天気",al:"날씨 (기존 위너)",sub:"비교 기준선",w:0,st:"기존 캠페인",d:"비 오는 날 노란 우비, 날씨별 일상을 그림일기로. 11월 초부터 일본 광고비 대부분을 받아 온 위너",cap:"毎日のたった1枚が、絵日記になる。✏️ 写真がそのまま手描き風のイラストに。",music:"기존",imp:5953,ctr:2.81,sp:32238,ins:51,watch:4}
+];
+const f=n=>n.toLocaleString('ko-KR'),r10=n=>Math.round(n/10)*10;
+A.forEach(a=>a.cpi=a.ins?a.sp/a.ins:null);
+const ok=a=>a.ins>=10;
+const best=(k,lo)=>{const c=A.filter(ok);return c.reduce((p,a)=>(lo?a[k]<p[k]:a[k]>p[k])?a:p,c[0]).n};
+const bC=best('ctr',0),bP=best('cpi',1);
+const mxC=Math.max(...A.map(a=>a.ctr)),mxP=Math.max(...A.filter(a=>a.cpi).map(a=>a.cpi)),mxI=Math.max(...A.map(a=>a.imp));
+const th=a=>`<th><div class="hd">${a.vid?`<video src="${a.vid}" poster="${a.img}" controls playsinline preload="none"></video>`:`<div style="width:100%;max-width:150px;aspect-ratio:9/16;border-radius:10px;background:var(--line);display:grid;place-items:center;color:var(--sub);font-size:13px">기준선</div>`}<div class="nm">${a.al}<small>${a.n==='天気'?'':a.n+' · '}${a.sub}</small></div><span class="pill">${a.st}</span></div></th>`;
+const row=(lab,fn)=>`<tr><td class="rl">${lab}</td>${A.map(a=>`<td>${fn(a)}</td>`).join('')}</tr>`;
+const bar=(v,mx,w)=>`<div class="bar ${w?'w':''}" style="width:${Math.max(3,v/mx*100)}%"></div>`;
+const t=document.getElementById('t');
+t.innerHTML=`<colgroup><col>${A.map(a=>`<col${a.w?' class="w"':''}>`).join('')}</colgroup>
+<thead><tr><th class="rl">소재</th>${A.map(th).join('')}</tr></thead><tbody>
+${row('내용',a=>`<div class="txt">${a.d}</div>`)}
+${row('캡션',a=>a.cap?`<div class="cap">${a.cap}</div>`:'<span class="txt">-</span>')}
+${row('음악',a=>`<span class="txt">${a.music}</span>`)}
+${row('노출',a=>`<div class="m ${a.imp<1000?'dim':''}">${f(a.imp)}회</div>${bar(a.imp,mxI,a.w)}`)}
+${row('클릭률<span class="hint">높을수록 좋음</span>',a=>`<div class="m ${a.imp<1000?'dim':''}">${a.ctr.toFixed(1)}%${a.n===bC?'<span class="b">1등</span>':''}</div>${bar(a.ctr,mxC,a.w)}`)}
+${row('광고비',a=>`<div class="m dim">${f(a.sp)}원</div>`)}
+${row('설치',a=>`<div class="m ${ok(a)?'':'dim'}">${a.ins}건</div>`)}
+${row('설치당 비용<span class="hint">낮을수록 좋음</span>',a=>a.cpi?`<div class="m ${ok(a)?'':'dim'}">약 ${f(r10(a.cpi))}원${a.n===bP?'<span class="b">1등</span>':''}</div>${bar(a.cpi,mxP,a.w)}`:'<div class="m dim">설치 없음</div>')}
+${row('평균 시청',a=>`<div class="m dim">${a.watch}초</div>`)}
+</tbody>`;
+}
+</script>
+</body></html>
