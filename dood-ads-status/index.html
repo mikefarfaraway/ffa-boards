@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>DOOD 메타 퍼포먼스 광고 현황</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f6f8fa,#0f141b);--card:light-dark(#fff,#161d27);--ink:light-dark(#121a24,#e7edf4);--sub:light-dark(#5b6675,#9aa6b5);--line:light-dark(#e3e8ee,#263140);--kr:light-dark(#2563c9,#79a7ff);--jp:light-dark(#c2410c,#ff9a66);--good:light-dark(#15803d,#4ade80);--warn:light-dark(#b45309,#fbbf24);--new:light-dark(#7c3aed,#c4a5ff)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 "IBM Plex Sans KR","Apple SD Gothic Neo",sans-serif}
+main{max-width:1080px;margin:0 auto;padding:clamp(24px,4vw,48px) max(4vw,16px) 64px}
+h1{font-size:clamp(26px,3.6vw,36px);margin:0 0 4px;line-height:1.25}
+h2{font-size:22px;margin:44px 0 6px}
+h3{font-size:18px;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+.lead{color:var(--sub);margin:0 0 22px}
+.note{color:var(--sub);font-size:13.5px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi .l{color:var(--sub);font-size:13.5px}
+.kpi .v{font-size:28px;font-weight:700;line-height:1.2;margin:2px 0;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:13.5px;color:var(--sub)}
+.good{color:var(--good)}.warn{color:var(--warn)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-variant-numeric:tabular-nums}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+th{font-size:13px;color:var(--sub);font-weight:600;background:light-dark(#f1f4f7,#1b2430)}
+tr.sum td{font-weight:700}
+.wrap{overflow-x:auto}
+.flag{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;color:#fff}
+.flag.kr{background:var(--kr)}.flag.jp{background:var(--jp)}
+.badge{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;border:1px solid currentColor}
+.badge.new{color:var(--new)}.badge.live{color:var(--good)}.badge.low{color:var(--sub)}
+.up{color:var(--good);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:14px}
+.ad{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.ad video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
+.ad .noimg{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13.5px;background:light-dark(#eef1f4,#1b2430);text-align:center;padding:16px}
+.ad .b{padding:12px 14px 14px}
+.ad .t{font-weight:700;font-size:16px}
+.ad .m{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:8px 0;font-size:13px;color:var(--sub)}
+.ad .m b{display:block;color:var(--ink);font-size:15px;font-variant-numeric:tabular-nums}
+details{font-size:13.5px;margin-top:6px}
+summary{cursor:pointer;color:var(--sub)}
+details ol{margin:6px 0 0;padding-left:18px}
+details li{margin-bottom:6px}
+.ko{display:block;color:var(--sub);font-size:12.5px}
+.sched{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.sched div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.sched b{display:block;font-size:17px}
+footer{color:var(--sub);font-size:13px;margin-top:40px;border-top:1px solid var(--line);padding-top:14px}
+</style></head><body><main>
+
+<h1>DOOD 메타 퍼포먼스 광고 현황</h1>
+<p class="lead">한국·일본 iOS 설치 캠페인의 예산, 성과, 지금 돌고 있는 소재를 한 곳에 모았어요. 기준: 성과는 최근 7일(11/18~24, 메타 집계), 예산·소재는 11/25 오후.</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="l">하루 광고 예산</div><div class="v">7.1만 → 14.2만</div><div class="s">11/25 2배 증액 (한국 9만 · 일본 5.2만)</div></div>
+  <div class="kpi"><div class="l">🇰🇷 한국 Trial당 비용</div><div class="v good">약 3,290원</div><div class="s">목표 5,200원 · Trial 78건</div></div>
+  <div class="kpi"><div class="l">🇯🇵 일본 Trial당 비용</div><div class="v warn">약 9,130원</div><div class="s">목표 6,300원 · 손익분기 약 1.15만 · Trial 21건</div></div>
+  <div class="kpi"><div class="l">지금 돌고 있는 광고</div><div class="v">16개</div><div class="s">한국 7 · 일본 9 (11/25 새로 5개)</div></div>
+</div>
+<p class="note">Trial = 무료체험 시작. 메타가 광고로 잡은 숫자라 앱 전체 Trial보다 적어요(광고 밖 유입 제외). 일본은 Trial 건수가 적어 ±30% 정도 흔들릴 수 있어요.</p>
+
+<h2>왜 2배로 올렸나</h2>
+<p>컨버전2(체험→결제)를 판단하려면 실험 그룹별 Trial이 최소 100건씩 필요한데 아직 모자라요. 12월부터 크리에이터 소재로 본격 집행하기 전에 설치를 늘려 모수를 빨리 쌓으려는 목적이에요. 잘 되는 세트는 25~30%만 올리고 나머지는 새 소재 세트에 넣었어요. 한 세트를 한 번에 크게 올리면 메타 학습이 다시 시작돼 단가가 흔들려서예요.</p>
+<p class="note">광고비가 2배여도 Trial은 약 1.4배 늘 것으로 봐요(추정). 앱 Trial의 절반 가까이가 광고 밖에서 들어와서예요. 일본 증액은 회사 기준("컨버전1이 오를 때까지 일본 증액 보류")과 겹쳐서 격납고에 결정 필요로 올려뒀어요.</p>
+
+<h2>예산 배분 (하루)</h2>
+<div class="wrap"><table>
+<tr><th>국가</th><th>세트</th><th>전</th><th>후</th><th>변화</th></tr>
+<tr><td><span class="flag kr">KR</span></td><td>종합 (위너)</td><td>2.5만</td><td>3.25만</td><td class="up">+30%</td></tr>
+<tr><td></td><td>소재테스트 (반려동물·아기)</td><td>2만</td><td>2.5만</td><td class="up">+25%</td></tr>
+<tr><td></td><td>겨울 <span class="badge new">신규</span></td><td>-</td><td>3.25만</td><td class="up">새 세트</td></tr>
+<tr class="sum"><td></td><td>한국 소계</td><td>4.5만</td><td>9만</td><td class="up">×2</td></tr>
+<tr><td><span class="flag jp">JP</span></td><td>기존 (天気 등, 비교 기준선)</td><td>0.3만</td><td>1만</td><td class="up">+0.7만</td></tr>
+<tr><td></td><td>겨울 (11/22~)</td><td>1.3만</td><td>1.7만</td><td class="up">+30%</td></tr>
+<tr><td></td><td>UGC 크리에이터 (11/24~)</td><td>1만</td><td>2.5만</td><td class="up">+1.5만</td></tr>
+<tr class="sum"><td></td><td>일본 소계</td><td>2.6만</td><td>5.2만</td><td class="up">×2</td></tr>
+<tr class="sum"><td>합계</td><td></td><td>7.1만</td><td>14.2만</td><td class="up">×2</td></tr>
+</table></div>
+
+<h2>세트별 성과 (최근 7일, 11/18~24)</h2>
+<div class="wrap"><table>
+<tr><th>국가</th><th>세트</th><th>광고비</th><th>설치</th><th>설치당 비용</th><th>클릭률</th><th>Trial</th><th>Trial당 비용</th></tr>
+<tr><td><span class="flag kr">KR</span></td><td>종합</td><td>13.5만</td><td>334</td><td>404원</td><td>4.75%</td><td rowspan="2">78</td><td rowspan="2">약 3,290원</td></tr>
+<tr><td></td><td>소재테스트</td><td>12.2만</td><td>227</td><td>537원</td><td>2.82%</td></tr>
+<tr><td><span class="flag jp">JP</span></td><td>기존</td><td>14.5만</td><td>223</td><td>648원</td><td>2.82%</td><td>17</td><td>약 8,500원</td></tr>
+<tr><td></td><td>겨울 (11/22~)</td><td>4.1만</td><td>78</td><td>531원</td><td>4.61%</td><td>2</td><td class="note">아직 판단 안 함</td></tr>
+<tr><td></td><td>UGC (11/24 오후~)</td><td>0.6만</td><td>10</td><td>568원</td><td>3.31%</td><td>2</td><td class="note">아직 판단 안 함</td></tr>
+</table></div>
+<p class="note">Trial은 캠페인 단위로만 보여요. 한국 두 세트는 같은 캠페인이라 합쳐서 적었어요. 겨울·UGC는 시작한 지 얼마 안 돼 Trial당 비용은 아직 판단하지 않아요(첫 주는 설치당 비용·클릭률로 봐요).</p>
+
+<h2>지금 돌고 있는 소재</h2>
+<p class="note">영상을 누르면 재생돼요. 숫자는 최근 7일(11/18~24) 기준이고, 11/25에 새로 붙인 소재는 아직 숫자가 없어요. 문구는 메타가 여러 개를 섞어 보여줘요.</p>
+
+<h3><span class="flag kr">KR</span> 한국 겨울 세트 <span class="badge new">11/25 신규</span></h3>
+<div class="grid">
+ <div class="ad"><video src="krw1.mp4" poster="krw1.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">겨울1 데일리룩</div><span class="badge new">신규</span>
+  <details open><summary>문구 3 · 제목 2</summary><ol><li>귀마개 꺼낸 첫날, 오늘 입은 겨울 옷. 거울 셀피 한 장이면 그림일기가 돼요.</li><li>매일 찍는 겨울 데일리룩, 앨범에만 두지 말고 그림일기로 모아보세요.</li><li>일기 쓸 시간 없어도 괜찮아요. 사진 한 장 고르면 오늘이 그림으로 남아요.</li></ol><p>제목: 오늘의 겨울룩, 그림일기로 / 셀피 한 장이 그림일기가 돼요</p></details></div></div>
+ <div class="ad"><video src="krw2.mp4" poster="krw2.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">겨울2 첫눈산책</div><span class="badge new">신규</span>
+  <details open><summary>문구 3 · 제목 2</summary><ol><li>첫눈 위 발자국, 칼바람에 감은 목도리. 사진 한 장이면 오늘이 그림일기가 돼요.</li><li>눈 오는 날 산책길에서 찍은 사진, 그림으로 남기면 이번 겨울이 더 오래 기억나요.</li><li>쓰는 부담 없이 사진만 고르면 끝. 이번 겨울은 그림일기로 모아보세요.</li></ol><p>제목: 첫눈 오는 날, 그림일기로 / 이번 겨울을 그림으로 남겨요</p></details></div></div>
+ <div class="ad"><video src="krw3.mp4" poster="krw3.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">겨울3 연말 홈파티</div><span class="badge new">신규</span>
+  <details open><summary>문구 3 · 제목 2</summary><ol><li>눈사람 피자 만들고, 이브엔 집에서 파스타 파티. 사진 한 장이면 그림일기가 돼요.</li><li>출근길부터 홈파티까지, 평범한 연말 하루도 그림으로 남겨요.</li><li>연말 사진, 앨범에 쌓아만 두셨나요? 하루 한 장 그림일기로 모아보세요.</li></ol><p>제목: 연말 홈파티, 그림일기로 / 사진 한 장이 그림일기가 돼요</p></details></div></div>
+ <div class="ad"><video src="krw4.mp4" poster="krw4.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">겨울4 크리스마스</div><span class="badge new">신규</span>
+  <details open><summary>문구 3 · 제목 2</summary><ol><li>첫눈 골목, 트리 앞 사진, 올해 마지막 쇼핑까지. 사진 한 장이면 그림일기가 돼요.</li><li>크리스마스와 연말, 반짝이는 순간을 그림으로 남겨요.</li><li>올해도 수고한 나에게, 하루 한 장 그림일기를 선물해 보세요.</li></ol><p>제목: 크리스마스를 그림일기로 / 올해 마지막 겨울, 그림으로 남겨요</p></details></div></div>
+</div>
+
+<h3><span class="flag kr">KR</span> 한국 종합·소재테스트 세트 <span class="badge live">라이브</span></h3>
+<div class="grid">
+ <div class="ad"><div class="noimg">종합 소재 (자체 제작)<br>영상 원본이 이 보드에 없어요</div><div class="b"><div class="t">종합 <span class="badge live">위너</span></div>
+  <div class="m"><span>설치당<b>404원</b></span><span>클릭률<b>4.75%</b></span><span>설치<b>334</b></span></div>
+  <details><summary>문구 5 · 제목 1</summary><ol><li>맑은 날도, 흐린 날도, 비 오는 날도. 전부 나의 하루. 사진 한 장과 한마디로, 매일이 작은 그림일기가 돼요.</li><li>매일 쓰는 일기가 부담스러웠다면, 사진 한 장과 한 줄이면 충분해요.</li><li>아이 얼굴 대신 그림으로. 소중한 일상을 마음 편히 기록하고 공유해요.</li><li>산책길, 카페, 퇴근길. 평범한 하루가 작품이 되는 그림 일기.</li><li>일본에서 인기 급상승중인 그림 일기 앱.</li></ol><p>제목: 사진 한 장이 그림일기가 돼요</p></details></div></div>
+ <div class="ad"><div class="noimg">반려동물 소재<br>영상 원본이 이 보드에 없어요</div><div class="b"><div class="t">반려동물</div>
+  <div class="m"><span>설치당<b>496원</b></span><span>클릭률<b>2.72%</b></span><span>설치<b>149</b></span></div>
+  <details><summary>문구 3 · 제목 2 (11/24 교체)</summary><ol><li>우리 집 막내의 오늘, 사진 한 장이면 그림일기가 돼요.</li><li>산책하고, 낮잠 자고, 간식 기다리고. 반려동물과의 평범한 하루를 그림으로 남겨요.</li><li>앨범에 쌓이기만 하던 반려동물 사진, 하루 한 장 그림일기로 모아보세요.</li></ol><p>제목: 반려동물 사진이 그림일기가 돼요 / 오늘의 댕냥이, 그림일기로</p></details></div></div>
+ <div class="ad"><div class="noimg">아기 소재<br>영상 원본이 이 보드에 없어요</div><div class="b"><div class="t">아기</div>
+  <div class="m"><span>설치당<b>613원</b></span><span>클릭률<b>3.02%</b></span><span>설치<b>78</b></span></div>
+  <details><summary>문구 3 · 제목 2 (11/24 교체)</summary><ol><li>아이 얼굴 대신 그림으로. 소중한 일상을 마음 편히 기록하고 공유해요.</li><li>하루하루 자라는 모습, 사진 한 장과 한 줄이면 육아일기 끝.</li><li>가족 단톡방에 얼굴 사진 대신, 귀여운 그림일기로 공유해요.</li></ol><p>제목: 아이 사진이 그림 육아일기가 돼요 / 얼굴 걱정 없이 남기는 육아일기</p></details></div></div>
+</div>
+
+<h3><span class="flag jp">JP</span> 일본 UGC 크리에이터 세트</h3>
+<div class="grid">
+ <div class="ad"><video src="akiho.mp4" poster="akiho.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">アキホ (아키호) · 작심삼일</div><span class="badge new">11/25 신규</span>
+  <details open><summary>문구 3 · 제목 2</summary><ol><li>三日坊主の私でも続いてる！写真を選ぶだけで、かわいい絵日記に。<span class="ko">작심삼일인 나도 계속하고 있어요! 사진만 고르면 귀여운 그림일기로.</span></li><li>ご飯もおでかけも、撮りっぱなしの写真がそのままイラスト日記になるよ。<span class="ko">밥도 외출도, 찍어만 두던 사진이 그대로 그림일기가 돼요.</span></li><li>あとで見返すのが楽しみになる。毎日の思い出、手軽に残そう。<span class="ko">나중에 다시 보는 게 즐거워져요. 매일의 추억을 가볍게 남겨요.</span></li></ol><p>제목: 写真を選ぶだけで絵日記に (사진만 고르면 그림일기로) / 三日坊主でも続く絵日記 (작심삼일이어도 계속되는 그림일기)</p></details></div></div>
+ <div class="ad"><video src="../jp-ugc-creators/teshigawara.mp4" poster="../jp-ugc-creators/teshigawara.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">テシガワラ (테시가와라) · 귀여운 앱 발견</div>
+  <div class="m"><span>설치당<b>526원</b></span><span>클릭률<b>3.61%</b></span><span>설치<b>10</b></span></div><p class="note">11/24 오후 시작이라 반나절 숫자예요.</p>
+  <details><summary>문구 3 · 제목 2</summary><ol><li>見つけちゃった、かわいすぎる日記アプリ。撮った写真が、そのままかわいい絵日記になる。<span class="ko">찾아버렸다, 너무 귀여운 일기 앱. 찍은 사진이 그대로 귀여운 그림일기가 돼요.</span></li><li>日記が続かなかった人でも大丈夫。写真を選んでひとこと書くだけで、毎日がかわいい絵日記に。<span class="ko">일기가 작심삼일이던 사람도 괜찮아요. 사진 고르고 한마디만 쓰면 매일이 귀여운 그림일기로.</span></li><li>カフェも、帰り道も、なんでもない日も。写真1枚で、今日がかわいい絵日記に。<span class="ko">카페도, 퇴근길도, 평범한 날도. 사진 한 장으로 오늘이 귀여운 그림일기로.</span></li></ol><p>제목: 撮った写真が、そのまま絵日記に (찍은 사진이 그대로 그림일기로) / かわいすぎる日記アプリ、見つけた (너무 귀여운 일기 앱, 찾았다)</p></details></div></div>
+ <div class="ad"><video src="../jp-ugc-creators/akikokko.mp4" poster="../jp-ugc-creators/akikokko.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">アキコッコ (아키콧코) · 아이와의 순간</div><span class="badge low">노출 적음</span>
+  <div class="m"><span>광고비<b>424원</b></span><span>노출<b>64</b></span><span>설치<b>0</b></span></div><p class="note">메타가 같은 세트의 테시가와라에 노출을 몰아주고 있어요(추정). 며칠 지켜봐요.</p>
+  <details><summary>문구 3 · 제목 2</summary><ol><li>この一瞬も、かわいく残したい。子どもとの毎日を、写真を撮るだけでかわいい絵日記に。<span class="ko">이 순간도 귀엽게 남기고 싶어. 아이와의 매일을, 사진만 찍으면 귀여운 그림일기로.</span></li><li>寝顔も、泣き顔も、はじめての一歩も。写真1枚とひとことで、子どもとの毎日が絵日記に。<span class="ko">자는 얼굴도, 우는 얼굴도, 첫걸음도. 사진 한 장과 한마디로 아이와의 매일이 그림일기로.</span></li><li>顔はイラストになるから、家族へのシェアも安心。毎日の成長を、かわいい絵日記で残そう。<span class="ko">얼굴은 그림이 되니까 가족에게 공유해도 안심. 매일의 성장을 귀여운 그림일기로 남겨요.</span></li></ol><p>제목: 撮った写真が、そのまま絵日記に (찍은 사진이 그대로 그림일기로) / 子どもとの毎日を、かわいい絵日記に (아이와의 매일을 귀여운 그림일기로)</p></details></div></div>
+</div>
+
+<h3><span class="flag jp">JP</span> 일본 겨울 세트 (11/22~)</h3>
+<div class="grid">
+ <div class="ad"><video src="../jp-winter-1124/w1.mp4" poster="../jp-winter-1124/v1.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">겨울1 目だけ · 아늑한 일상</div><span class="badge live">예산 대부분</span>
+  <div class="m"><span>설치당<b>470원</b></span><span>클릭률<b>4.81%</b></span><span>설치<b>73</b></span></div>
+  <details><summary>캡션 (인스타 게시물 광고)</summary><p>目だけ出して歩いた日も、雪だるまがとける前にあわてて撮った一杯も。☃️ 冬の小さなできごとを、写真1枚とひとことで絵日記に。<span class="ko">눈만 내놓고 걸었던 날도, 눈사람이 녹기 전에 서둘러 찍은 한 잔도. 겨울의 작은 일들을 사진 한 장과 한마디로 그림일기로.</span></p></details></div></div>
+ <div class="ad"><video src="../jp-winter-1124/w2.mp4" poster="../jp-winter-1124/v2.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">겨울2 帰り道 · 도시 귀갓길</div><span class="badge low">노출 적음</span>
+  <div class="m"><span>광고비<b>558원</b></span><span>클릭률<b>0.81%</b></span><span>설치<b>0</b></span></div>
+  <details><summary>캡션 (인스타 게시물 광고)</summary><p>缶コーヒーで手を温めた帰り道も、肉まんを半分こした夜も。☕ 写真1枚とひとことで、冬の毎日が小さな絵日記に。<span class="ko">캔커피로 손을 녹인 귀갓길도, 호빵을 반씩 나눈 밤도. 사진 한 장과 한마디로 겨울의 매일이 작은 그림일기로.</span></p></details></div></div>
+ <div class="ad"><video src="../jp-winter-1124/w3.mp4" poster="../jp-winter-1124/v3.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">겨울3 富士山 · 겨울 여행</div><span class="badge low">노출 적음</span>
+  <div class="m"><span>설치당<b>1,319원</b></span><span>클릭률<b>3.87%</b></span><span>설치<b>5</b></span></div>
+  <details><summary>캡션 (인스타 게시물 광고)</summary><p>何度も振り返った富士山も、「あと一本」が三本になったスキーも。🗻 この冬のおでかけを、写真1枚とひとことで絵日記に。<span class="ko">몇 번이나 돌아본 후지산도, "한 번만 더"가 세 번이 된 스키도. 이번 겨울 나들이를 사진 한 장과 한마디로 그림일기로.</span></p></details></div></div>
+</div>
+
+<h3><span class="flag jp">JP</span> 일본 기존 세트 (비교 기준선)</h3>
+<div class="grid">
+ <div class="ad"><video src="../jp-winter-1124/w0.mp4" poster="../jp-winter-1124/v0.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">自作_天気 · 날씨</div><span class="badge live">기존 위너</span>
+  <div class="m"><span>설치당<b>613원</b></span><span>클릭률<b>2.71%</b></span><span>설치<b>190</b></span></div>
+  <details><summary>문구 3 · 제목 3</summary><ol><li>毎日のたった1枚が、絵日記になる。✏️ 写真がそのまま手描き風のイラストに。ウィジェットで毎日ふり返れる、DOODの絵日記アプリ。<span class="ko">매일의 단 한 장이 그림일기가 돼요. 사진이 그대로 손그림 같은 일러스트로. 위젯으로 매일 돌아볼 수 있는 DOOD 그림일기 앱.</span></li><li>晴れの日も、くもりの日も、雨の日も。☔ 毎日の1枚が、やさしい手描き風の絵日記に。<span class="ko">맑은 날도, 흐린 날도, 비 오는 날도. 매일의 한 장이 따뜻한 손그림 그림일기로.</span></li><li>写真を選ぶだけで、手描き風の絵日記が完成。✨ むずかしい操作はなし。毎日続けられる記録アプリ。<span class="ko">사진만 고르면 손그림 그림일기 완성. 어려운 조작 없이 매일 이어갈 수 있는 기록 앱.</span></li></ol><p>제목: 写真が絵になる、毎日の記録 (사진이 그림이 되는 매일의 기록) / 1日1枚、絵日記はじめよう (하루 한 장, 그림일기 시작해요) / ウィジェットで毎日ふり返る (위젯으로 매일 돌아보기)</p></details></div></div>
+ <div class="ad"><video src="jpsogo.mp4" poster="jpsogo.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">릴스_総合 · 종합</div>
+  <div class="m"><span>설치당<b>508원</b></span><span>클릭률<b>4.02%</b></span><span>설치<b>24</b></span></div>
+  <details><summary>캡션 (인스타 게시물 광고)</summary><p>笑いすぎてお腹痛い日も、いつもの帰り道も。✏️ 写真1枚とひとことで、毎日が小さな絵日記に。<span class="ko">너무 웃어서 배 아픈 날도, 늘 가던 귀갓길도. 사진 한 장과 한마디로 매일이 작은 그림일기로.</span></p></details></div></div>
+ <div class="ad"><video src="jpikuji.mp4" poster="jpikuji.jpg" controls muted playsinline preload="none"></video><div class="b"><div class="t">릴스_育児 · 육아</div>
+  <div class="m"><span>설치당<b>1,274원</b></span><span>클릭률<b>2.71%</b></span><span>설치<b>7</b></span></div>
+  <details><summary>캡션 (인스타 게시물 광고)</summary><p>アイスで口のまわりベタベタの日も、帰りの車でぐっすりの日も。写真1枚とひとことで、成長の絵日記に。<span class="ko">아이스크림으로 입가가 끈적한 날도, 돌아오는 차에서 푹 잠든 날도. 사진 한 장과 한마디로 성장 그림일기로.</span></p></details></div></div>
+</div>
+
+<h2>다음 판독</h2>
+<div class="sched">
+ <div><b>11/26</b>하드페이월 실험 판단</div>
+ <div><b>11/29</b>일본 겨울 소재 7일 판독</div>
+ <div><b>12/1</b>일본 UGC 7일 판독</div>
+ <div><b>12/2</b>한국 겨울 소재 7일 판독</div>
+</div>
+<p class="note">매일 아침 일일 분석은 계속 돌아가요. 무료체험은 11/17부터 한·일 모두 3일이에요.</p>
+
+<footer>숫자 출처: 메타 광고 관리자(설치·Trial은 메타 집계, 1일 클릭 기준). 이 보드는 같은 링크로 계속 업데이트해요. 마지막 업데이트 2026-11-25 14:30 KST.</footer>
+</main></body></html>
