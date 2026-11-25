@@ -152,7 +152,7 @@ figure{margin:0}figcaption{font-size:13px;color:var(--mute);margin-bottom:6px;fo
 <div class="kt">
 <div class="k1"><b class="n">1</b><div><p class="hd1">하드 페이월은 체험은 조금 늘지만, 결제가 훨씬 더 줄어요</p>
 <p class="num">설치 1,000명당 결제 <b>약 12명</b>(하드 페이월) vs <b>약 27명</b>(소프트 페이월) · 추정</p>
-<p class="so">그래서 → 하드 페이월 비중을 줄여요</p></div></div>
+<p class="so">그래서 → 그룹별 체험 100건 모일 때까지 설치를 늘려 확인해요 (11/25 팀 결론)</p></div></div>
 <div class="k2"><b class="n">2</b><div><p class="hd1">하드 페이월이 아닌 사람도 결제가 줄었어요</p>
 <p class="num">체험을 켜고 10분 안에 끄는 사람: 100명 중 <b>6명 → 18명</b>. 결제 화면까지 오는 비율과 체험 시작 비율은 그대로예요</p>
 <p class="so">그래서 → 결제 화면 구성 테스트(재진님 그룹 B)를 빠르게 시작해요</p></div></div>
@@ -160,7 +160,7 @@ figure{margin:0}figcaption{font-size:13px;color:var(--mute);margin-bottom:6px;fo
 <p class="num">설치 100명 중 체험 시작: 전후 모두 <b>8명</b></p>
 <p class="so">그래서 → 깊게 분석하지 않아도 돼요</p></div></div>
 </div>
-<div class="caveat" style="margin:16px 0 4px;padding:12px 16px;border:1.5px dashed var(--amb);border-radius:12px;font-size:16px"><b>⚠ 아직은 '추세'예요.</b> 방향은 분명하지만 체험이 끝난 사람이 하드 페이월 34명, 소프트 페이월 57명뿐이라 <b>최종 확정과 원인 분석은 더 지켜봐야 해요.</b> 확정 판단은 <b>12월 첫 주쯤</b>이에요.</div>
+<div class="caveat" style="margin:16px 0 4px;padding:12px 16px;border:1.5px dashed var(--amb);border-radius:12px;font-size:16px"><b>⚠ 아직은 '추세'예요.</b> 방향은 분명하지만 체험이 끝난 사람이 하드 페이월 34명, 소프트 페이월 57명뿐이라 <b>최종 확정과 원인 분석은 더 지켜봐야 해요.</b> 팀 결론(11/25): 광고 예산을 늘려 <b>그룹별 체험 100건</b>을 모은 뒤 판단해요. 예상 <b>12월 첫 주쯤</b>이에요.</div>
 </div>
 
 <section><div class="band">
@@ -342,13 +342,18 @@ figure{margin:0}figcaption{font-size:13px;color:var(--mute);margin-bottom:6px;fo
 
 <section><div class="band">
 <h2>4. 그래서 무엇을 할까</h2>
+<div class="next" style="margin:8px 0 18px"><b>팀 논의 결론 (11/25)</b>
+<p>① 컨버전2·설치당 결제를 결론 내기엔 지금 모수가 너무 작음 → <b>그룹별 체험 최소 100건</b> 쌓인 뒤 판단<br>② 12월부터 크리에이터 소재로 광고를 본격 늘릴 예정이라, 그 전에 컨버전 실험을 빨리 끝내는 게 목표<br>③ 그래서 <b>광고 일 예산을 약 2배로 늘려</b> 실험 모수(설치)를 먼저 더 모음</p>
+<p class="note" style="margin-top:6px">예상(추정): 하드 페이월 그룹 체험 100건 ~11/27, 크레딧 1개 그룹 ~11/30~12/1. 체험이 끝난 100건 기준으로는 ~12/4~12/5.</p></div>
+
 <div class="scroll"><table class="stack" id="todo">
 <thead><tr><th>할 일</th><th>이유</th><th>누가</th><th>언제</th></tr></thead>
 <tbody>
-<tr><td><b>하드 페이월 비중 줄이기</b> (예: 하드 페이월 20%)</td><td>핵심 1. 하루 약 4건 결제 손해를 줄이면서 실험은 이어가요. 전면 적용은 보류</td><td><textarea class="ed" data-k="w0" rows="2" aria-label="누가">재진 (결정) · 재석 (설정)</textarea></td><td><textarea class="ed" data-k="d0" rows="2" aria-label="언제">11/26</textarea></td></tr>
-<tr><td><b>결제 화면 구성 테스트 빠르게 시작</b> (재진님 페이월 테스트안 그룹 B → 그룹 C)</td><td>핵심 2. 체험 직후 해지를 줄이는 게 목표. 그룹 B의 "체험 끝나기 전 알림" 안내가 10분 안 해지를 직접 겨냥(가설). 판단은 체험 시작뿐 아니라 결제·10분 안 해지까지 봐요</td><td><textarea class="ed" data-k="w1" rows="2" aria-label="누가">재진 (디자인) · 재석 (RevenueCat 이관)</textarea></td><td><textarea class="ed" data-k="d1" rows="2" aria-label="언제">그룹 B 디자인 마무리 후 바로</textarea></td></tr>
-<tr><td><b>스페셜 오퍼</b> (결제 화면 닫을 때·결제 취소 시 1회)</td><td>놓친 사람을 한 번 더 잡아요. 먼저 오퍼 있음·없음 효과부터 보고, 정가 표시·카운트다운은 그다음</td><td><textarea class="ed" data-k="w2" rows="2" aria-label="누가">재진 (설계) · 재석 (구현)</textarea></td><td><textarea class="ed" data-k="d2" rows="2" aria-label="언제">그룹 B 다음 (병행 가능하면 병행)</textarea></td></tr>
-<tr><td>실험 주 지표를 결제로 바꾸기</td><td>지금 주 지표는 체험 시작을 포함해, 그대로 보면 하드 페이월이 이기는 것처럼 보여요</td><td><textarea class="ed" data-k="w3" rows="2" aria-label="누가">재석</textarea></td><td><textarea class="ed" data-k="d3" rows="2" aria-label="언제">이번 주 (11/27)</textarea></td></tr>
+<tr><td><b>광고 일 예산 약 2배 증액</b> (실험 모수 늘리기)</td><td>팀 결론 ③. 12월 크리에이터 소재 집행 전에 실험을 끝내기 위해</td><td><textarea class="ed" data-k="w0" rows="2" aria-label="누가">Mike</textarea></td><td><textarea class="ed" data-k="d0" rows="2" aria-label="언제">11/26~ (결정 11/25)</textarea></td></tr>
+<tr><td><b>그룹별 체험 100건 모이면 하드 페이월 실험 판단</b></td><td>팀 결론 ①. 그 전엔 결론 내지 않음. 판단은 체험 시작뿐 아니라 결제·10분 안 해지까지</td><td><textarea class="ed" data-k="w1" rows="2" aria-label="누가">재석 · 재진</textarea></td><td><textarea class="ed" data-k="d1" rows="2" aria-label="언제">~12/1 (체험 끝난 100건은 ~12/5)</textarea></td></tr>
+<tr><td>결제 화면 구성 테스트 준비 (재진님 페이월 테스트안 그룹 B → C)</td><td>체험 직후 해지를 줄이는 게 목표. 그룹 B의 "체험 끝나기 전 알림" 안내가 10분 안 해지를 직접 겨냥(가설)</td><td><textarea class="ed" data-k="w2" rows="2" aria-label="누가">재진 (디자인) · 재석 (RevenueCat 이관)</textarea></td><td><textarea class="ed" data-k="d2" rows="2" aria-label="언제">하드 페이월 판단 후 (준비는 병행)</textarea></td></tr>
+<tr><td>스페셜 오퍼 준비 (결제 화면 닫을 때·결제 취소 시 1회)</td><td>놓친 사람을 한 번 더 잡아요. 먼저 오퍼 있음·없음 효과부터</td><td><textarea class="ed" data-k="w3" rows="2" aria-label="누가">재진 (설계) · 재석 (구현)</textarea></td><td><textarea class="ed" data-k="d3" rows="2" aria-label="언제">그룹 B 다음</textarea></td></tr>
+<tr><td>실험 주 지표를 결제로 바꾸기</td><td>지금 주 지표는 체험 시작을 포함해, 그대로 보면 하드 페이월이 이기는 것처럼 보여요</td><td><textarea class="ed" data-k="w4" rows="2" aria-label="누가">재석</textarea></td><td><textarea class="ed" data-k="d4" rows="2" aria-label="언제">이번 주 (11/27)</textarea></td></tr>
 </tbody></table></div>
 <div class="edbar"><button id="edsave">저장</button><button id="edreset" class="ghost">초안으로 되돌리기</button><span id="edmsg" class="note">누가·언제 칸은 직접 고칠 수 있어요. 저장은 지금 쓰는 브라우저에만 남아요(동료 화면엔 안 보임).</span></div>
 </div></section>
@@ -358,7 +363,7 @@ figure{margin:0}figcaption{font-size:13px;color:var(--mute);margin-bottom:6px;fo
 <div class="kt">
 <div class="k1"><b class="n">1</b><div><p class="hd1">하드 페이월은 체험은 조금 늘지만, 결제가 훨씬 더 줄어요</p>
 <p class="num">설치 1,000명당 결제 <b>약 12명</b>(하드 페이월) vs <b>약 27명</b>(소프트 페이월) · 추정</p>
-<p class="so">그래서 → 하드 페이월 비중을 줄여요</p></div></div>
+<p class="so">그래서 → 그룹별 체험 100건 모일 때까지 설치를 늘려 확인해요 (11/25 팀 결론)</p></div></div>
 <div class="k2"><b class="n">2</b><div><p class="hd1">하드 페이월이 아닌 사람도 결제가 줄었어요</p>
 <p class="num">체험을 켜고 10분 안에 끄는 사람: 100명 중 <b>6명 → 18명</b>. 결제 화면까지 오는 비율과 체험 시작 비율은 그대로예요</p>
 <p class="so">그래서 → 결제 화면 구성 테스트(재진님 그룹 B)를 빠르게 시작해요</p></div></div>
@@ -366,7 +371,7 @@ figure{margin:0}figcaption{font-size:13px;color:var(--mute);margin-bottom:6px;fo
 <p class="num">설치 100명 중 체험 시작: 전후 모두 <b>8명</b></p>
 <p class="so">그래서 → 깊게 분석하지 않아도 돼요</p></div></div>
 </div>
-<div class="caveat" style="margin:16px 0 4px;padding:12px 16px;border:1.5px dashed var(--amb);border-radius:12px;font-size:16px"><b>⚠ 아직은 '추세'예요.</b> 방향은 분명하지만 체험이 끝난 사람이 하드 페이월 34명, 소프트 페이월 57명뿐이라 <b>최종 확정과 원인 분석은 더 지켜봐야 해요.</b> 확정 판단은 <b>12월 첫 주쯤</b>이에요.</div>
+<div class="caveat" style="margin:16px 0 4px;padding:12px 16px;border:1.5px dashed var(--amb);border-radius:12px;font-size:16px"><b>⚠ 아직은 '추세'예요.</b> 방향은 분명하지만 체험이 끝난 사람이 하드 페이월 34명, 소프트 페이월 57명뿐이라 <b>최종 확정과 원인 분석은 더 지켜봐야 해요.</b> 팀 결론(11/25): 광고 예산을 늘려 <b>그룹별 체험 100건</b>을 모은 뒤 판단해요. 예상 <b>12월 첫 주쯤</b>이에요.</div>
 <details><summary>숫자 기준과 '우연일 확률' 보기</summary>
 <p>컨버전2: Mixpanel rc_* 이벤트, 체험 시작 기준, 체험 끝나고 12시간 지난 것만, 동남아 제외. 주별 값은 11/23 점검(10/15~11/11 주)과 오늘 데이터. 실험 전 = 11/12~17 시작 3일 체험 147건.</p>
 <p>우연일 확률은 Fisher 정확 검정. 5% 아래면 진짜 변화로, 그 위면 '아직 확정 아님'으로 적었어요. 실제 결제율이 33%일 때 하루 25건은 우연만으로 15~52%까지 흔들려요. 그래서 컨버전2는 주별, 끝난 체험 100건 이상에서 봐요.</p>
@@ -383,7 +388,7 @@ document.getElementById('wl').innerHTML=W.map(w=>`<span>${w[0]}</span>`).join(''
 }
 </script>
 <script>
-{const K='dood-c2-check-1125-todo-v2',E=[...document.querySelectorAll('#todo .ed')],D={};E.forEach(e=>D[e.dataset.k]=e.value);
+{const K='dood-c2-check-1125-todo-v3',E=[...document.querySelectorAll('#todo .ed')],D={};E.forEach(e=>D[e.dataset.k]=e.value);
 const msg=t=>{const m=document.getElementById('edmsg');m.textContent=t};
 try{const s=JSON.parse(localStorage.getItem(K)||'null');if(s)E.forEach(e=>{if(s[e.dataset.k]!=null)e.value=s[e.dataset.k]})}catch(_){}
 document.getElementById('edsave').onclick=()=>{const o={};E.forEach(e=>o[e.dataset.k]=e.value);try{localStorage.setItem(K,JSON.stringify(o));msg('저장했어요. 이 브라우저에서 다시 열어도 남아 있어요.')}catch(_){msg('이 브라우저에선 저장이 안 돼요.')}};
