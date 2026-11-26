@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>DOOD 핵심 지표 현황판</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#fff,#0d0e18);--ink:light-dark(#14110f,#ecebf3);--mute:light-dark(#6b6b76,#9a9aab);--line:light-dark(#e6e6ec,#262838);--acc:light-dark(#1d2bd8,#8c96ff);--up:light-dark(#2b8a3e,#69db7c);--dn:light-dark(#d9480f,#ff8a50);--soft:light-dark(#f4f5fb,#161827)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:clamp(18px,3vw,40px) max(4vw,14px)}
+h1{font-size:clamp(22px,3vw,30px);margin:.1em 0 .2em}
+h2{font-size:18px;margin:28px 0 8px}
+.meta{color:var(--mute);font-size:13px}
+.lead{font-size:16px;margin:10px 0 0;max-width:78ch}
+.hero{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;margin-top:18px}
+.subs{display:grid;gap:14px}
+.hk{border-radius:14px;padding:18px 20px;background:var(--soft)}
+.hk.main{border:2px solid var(--acc)}
+.hk .badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:9px;background:var(--acc);color:var(--bg)}
+.hk .badge.sub{background:var(--mute)}
+.hk .n{font-size:15px;font-weight:700;margin-top:6px}
+.hk .v{font-size:clamp(44px,7vw,64px);font-weight:800;line-height:1.05;margin-top:4px}
+.hk.subk{padding:14px 18px}.hk.subk .v{font-size:clamp(30px,4vw,38px)}.hk.subk svg{max-height:110px}
+.hk .d{font-size:15px;font-weight:700}
+.hk .g{font-size:13px;color:var(--mute);margin-top:2px}
+.hk svg{width:100%;display:block;margin-top:10px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;margin-top:18px}
+.k{background:var(--soft);border-radius:12px;padding:14px 16px}
+.k .n{font-size:13px;color:var(--mute)}
+.k .v{font-size:30px;font-weight:700;line-height:1.2;white-space:nowrap}
+.k .d{font-size:14px;font-weight:600}
+.k .t{font-size:12px;color:var(--mute);margin-top:4px}
+.up{color:var(--up)}.dn{color:var(--dn)}.fl{color:var(--mute)}
+svg.sp{width:100%;height:42px;display:block;margin-top:6px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--mute);font-weight:600;font-size:12px}
+tr.now td{font-weight:700}
+tr.now td:first-child{box-shadow:inset 4px 0 0 var(--acc)}
+td .dl{display:block;font-size:11px;font-weight:600;line-height:1.2}
+.badv{color:var(--dn)}.okv{color:var(--up)}
+.scroll{overflow-x:auto}
+.bars{display:flex;align-items:flex-end;gap:3px;height:150px;border-bottom:1px solid var(--line);margin-top:8px}
+.bars div{flex:1;background:var(--acc);opacity:.85;border-radius:3px 3px 0 0;position:relative}
+.bars div.part{opacity:.35}
+.bars div:hover::after{content:attr(data-l);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-size:11px;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.xl{display:flex;gap:3px;font-size:11px;color:var(--mute)}.xl span{flex:1;text-align:center}
+details{margin-top:10px;color:var(--mute);font-size:13px}summary{cursor:pointer}
+.note{color:var(--mute);font-size:13px}
+.whys{display:block}
+.ws{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:10px 28px;padding:20px 0;border-top:1px solid var(--line)}
+.ws h3{grid-column:1/-1;margin:0;font-size:17px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ws h3 span{font-size:15px;color:var(--mute);font-weight:600}
+.ws .hd{grid-column:1/-1;margin:0;font-size:15.5px;font-weight:600}
+.ws svg{width:100%;display:block}
+.ws ul{margin:0 0 8px;padding-left:0;list-style:none}.ws li{margin:4px 0;font-size:14px}
+.ws .lab{font-size:12px;font-weight:700;color:var(--mute);margin:8px 0 2px;letter-spacing:.02em}
+.ws .ins{font-size:14px;margin:0}
+.ws .todo{font-size:14px;margin:0;padding:8px 10px;background:var(--soft);border-left:3px solid var(--acc);border-radius:0 8px 8px 0}
+.ws .s{font-size:12px;color:var(--mute);margin-top:8px}.ws a{color:var(--acc)}
+@media(max-width:700px){.ws{grid-template-columns:1fr}}
+.wc{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.wc .h{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.wc .m{font-weight:700;font-size:15px}.wc .c{font-weight:700;white-space:nowrap}
+.wc .ln{margin:6px 0 0;font-size:14px}.wc .ln b{display:inline-block;width:3.6em;color:var(--mute);font-weight:600}
+.wc .ln.todo b{color:var(--acc)}
+.wc svg{width:100%;display:block;margin:8px 0 2px}
+.wc details{margin-top:6px;font-size:12px}
+.wc a{color:var(--acc)}
+.why{display:none}
+.why .m{font-weight:700}.why .c{font-size:13px}
+.why .r p{margin:0 0 4px}.why .s{font-size:12px;color:var(--mute)}
+.tk{margin-top:14px;padding:12px 16px;border-left:4px solid var(--acc);background:var(--soft);border-radius:0 10px 10px 0}
+.tk ol{margin:6px 0 0;padding-left:20px}.tk li{margin:3px 0}
+.why .ia{margin:6px 0 4px;padding:8px 10px;background:var(--soft);border-radius:8px;font-size:14px}
+.why .ia p{margin:2px 0}.why .ia b{color:var(--acc)}
+.why a{color:var(--acc)}
+.tag{display:inline-block;font-size:11px;padding:0 7px;border-radius:9px;margin-right:6px;border:1px solid currentColor}
+.tag.확인{color:var(--up)}.tag.추정{color:var(--acc)}.tag.미확인{color:var(--mute)}
+@media(max-width:600px){.why{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+
+<div class="meta" id="asof"></div>
+<h1>DOOD 핵심 지표 현황판</h1>
+<p class="lead" id="lead"></p>
+
+<div class="hero" id="hero"></div>
+<div class="tk"><b>이번 주 Takeaway</b><ol id="tk"></ol></div>
+<div class="grid" id="tiles"></div>
+
+<h2>왜 변했나, 그래서 뭘 할지 (지난주 대비)</h2>
+<div id="why"></div>
+<p class="note">확인 = 데이터로 확인 · 추정 = 같이 움직였지만 원인인지 모름 · 미확인 = 원인 모름. 빨간 막대가 변화를 만든 부분입니다.</p>
+
+<h2>주별 추이 (목~수 주차)</h2>
+<div class="scroll"><table id="wk"><thead><tr><th>주</th><th>설치</th><th>체험 시작</th><th>컨버전1<br>(설치→체험)</th><th>새 유료</th><th>하루 새 유료</th><th>컨버전2<br>(체험→결제)</th><th>종합 컨버전<br>(설치→유료)</th><th>갱신 결제</th><th>Meta 광고비</th><th>CPI<br>(Meta)</th></tr></thead><tbody></tbody></table></div>
+<p class="note">작은 글씨는 전 주 대비(▲ 초록 = 올라감, ▼ 빨강 = 내려감). 컨버전1·컨버전2 칸은 목표 미달이면 붉게, 목표와 멀수록 진하게 칠했습니다. 목표(FFA 현재 상태): 컨버전1 15%, 컨버전2 35%, MRR 12/31 $5,000.</p>
+
+<h2>하루 새 유료결제 (최근 28일)</h2>
+<div class="bars" id="bars"></div><div class="xl" id="xl"></div>
+<p class="note">흐린 막대는 오늘(집계 중).</p>
+
+<details><summary>숫자 기준 보기</summary>
+<p>모두 Mixpanel(DOOD, 프로젝트 4061667) 이벤트 발생일 기준, 동남아 포함. 주는 목~수(위클리 싱크 직전 주까지).</p>
+<p>설치 = intro_completed 순사용자(앱 첫 화면 완료). Mixpanel엔 설치 이벤트가 없어 대신 씁니다. 11/12~18 주는 2,414로 RevenueCat 설치 2,494보다 약 3% 적습니다. 10/20처럼 앱 업데이트 날엔 기존 유저도 잡혀 부풀 수 있어 10/22 주부터 봅니다.</p>
+<p>체험 시작 = rc_trial_started_event, 새 유료 = rc_trial_converted_event(체험 후 결제). 체험 없이 바로 결제한 건은 Mixpanel에 따로 없어 빠집니다.</p>
+<p>컨버전1 = 그 주 체험 시작 ÷ 그 주 설치. 설치 코호트(그 주 설치한 사람이 체험했는지)로 본 이전 보드 값과 조금 다릅니다(11/12~18 주: 이 보드 8.7%, 11/25 종합 현황판 7.3%).</p>
+<p>컨버전2 = 그 주 결제 ÷ (그 주 결제 + 그 주 체험 해지). 체험 시작일 기준 컨버전2의 빠른 근사치입니다. 정확한 컨버전2는 체험이 다 끝난 뒤 데이터 분석 프로젝트가 채웁니다.</p>
+<p>종합 컨버전 = 컨버전1 × 컨버전2(설치→유료 근사치). 목표는 FFA 현재 상태의 Install to Paid 약 5%.</p>
+<p>갱신 결제 = rc_renewal_event. 11/17부터 출시 주 월간 구독의 첫 갱신이 몰려 늘었습니다.</p>
+<p>CPI = Meta 광고비 ÷ Meta 집계 설치(dood 광고 계정, 목~수 7일). Meta 광고는 10/29 주부터 집행. 전체 설치로 나눈 값(11/19~25 ₩344)은 오가닉이 섞여 낮게 나옵니다. CPI는 낮을수록 좋아서 오르면 빨강으로 표시합니다.</p>
+<p>MRR은 Mixpanel로 계산할 수 없어 RevenueCat 값을 손으로 옮깁니다(기준 시각 함께 표시).</p>
+</details>
+
+<script>
+/* ===== 데이터: 매주 이 블록만 고친다. weeks 맨 끝에 새 주를 한 줄 추가 ===== */
+const DATA={
+ asOf:"2026-11-26 16:50 KST",
+ source:"Mixpanel(DOOD 4061667) · MRR은 RevenueCat",
+ lead:"Key Metric 컨버전1은 10.8%로 지난주보다 2.1%p 올랐지만 목표 15%까지 4.2%p 남았습니다. 보조 지표 컨버전2는 28.6%로 9.0%p 떨어져 목표 35% 아래로 내려갔고, 두 개를 곱한 종합 컨버전(설치→유료)은 3.1%로 목표 5% 아래이고, 새 유료는 61건(-39%)입니다.",
+ weeks:[
+  {w:"10/22~28",spend:0,metaInst:0,inst:1475,trial:205,paid:136,cancel:255,renew:6},
+  {w:"10/29~11/4",spend:388634,metaInst:456,inst:1301,trial:159,paid:86,cancel:123,renew:7},
+  {w:"11/5~11",spend:423097,metaInst:953,inst:1505,trial:167,paid:69,cancel:106,renew:6},
+  {w:"11/12~18",spend:577579,metaInst:1273,inst:2414,trial:209,paid:100,cancel:166,renew:58},
+  {w:"11/19~25",spend:487859,metaInst:867,inst:1419,trial:153,paid:61,cancel:152,renew:78}
+ ],
+ takeaways:[
+  "컨버전1 10.8%(+2.1%p): 오름폭 일부는 하드 페이월 그룹·지난주 기저 효과(추정), 목표 15%까지 4.2%p",
+  "컨버전2 28.6%(-9.0%p): 하락이 하드 페이월 그룹에 몰려 있음(추정) → 그룹별 체험 100건 확보 후 결정(11/26 싱크)",
+  "새 결제 -39%는 체험 수 감소 반, 컨버전2 하락 반 · 설치 -21%(몰림 제외)는 광고 2배 증액 효과로 다음 주 확인"
+ ],
+ why:[
+  {m:"★ 컨버전1 (설치→체험) · Key Metric",c:"8.7% → 10.8% (+2.1%p)",head:"올랐지만 실력 향상이라기보다 하드 페이월 그룹 효과와 지난주 기저 효과가 섞여 있습니다.",
+   chart:{type:"hbars",fmt:"pct",goal:.15,goalLabel:"목표 15%",items:[{l:"크레딧 1개",v:.105},{l:"하드 페이월",v:.132,hl:1}]},
+   causes:[{t:"추정",x:"하드 페이월 그룹 13.2% vs 크레딧 1개 10.5% (차이가 우연일 수 있음, p≈0.28)"},{t:"확인",x:"지난주 11/14~15 몰림 이틀은 체험 비율 약 6%로 낮아 전 주 값이 눌려 있었음"}],
+   insight:"목표 15%까지 아직 4%p 남았습니다. 컨버전1이 올라도 컨버전2가 같이 빠지면 매출엔 도움이 안 됩니다.",
+   todo:"컨버전1만으로 실험 승패를 정하지 않고 설치당 결제로 판단(11/20 기준) · 실험 순서(하드 페이월 → 가격 → Special Offer → 페이월 구성) 유지",
+   s:"11/25 종합 현황판 실험 표, Mixpanel 일별 intro_completed·rc_trial_started",links:[{t:"하드 페이월 실험",u:"https://claude.ai/artifact/HoPGMuroDmTHjfRNmpZT8G"}]},
+  {m:"컨버전2 (체험→결제)",c:"37.6% → 28.6% (-9.0%p)",head:"하락은 11/18 하드 페이월 실험 시작과 겹치고, 하드 페이월 그룹의 컨버전2가 특히 낮습니다.",
+   chart:{type:"hbars",fmt:"pct",goal:.35,goalLabel:"목표 35%",items:[{l:"11/18 전 (3일 체험)",v:.374},{l:"무료 두들 1개",v:.263},{l:"하드 페이월",v:.088,hl:1}]},
+   causes:[{t:"추정",x:"하드 페이월 그룹: 체험 10분 안 해지 38%, 컨버전2 9% (두들 1~2장 써 보고 해지)"},{t:"추정",x:"한국 체험 약 36%가 가격 변경 동의 미응답으로 만료 (이번 주 영향은 미계산)"},{t:"미확인",x:"무료 두들 1개 그룹도 10분 안 해지 6% → 18%. 새 온보딩·결제 화면 중 무엇 때문인지 모름"}],
+   insight:"하드 페이월은 체험 시작은 늘리지만(컨버전1↑) 바로 해지도 늘려, 설치당 결제는 크레딧 1개 그룹이 앞서는 흐름입니다. 다만 그룹당 결제 3~5건이라 결론은 아닙니다.",
+   todo:"하드 페이월 실험은 그룹별 체험 100건 확보 후 결정(11/26 싱크) · 가격 동의 만료분은 다음 판에서 따로 계산",
+   s:"11/25 종합 현황판 실험 표(Mixpanel 실험 Free credits: 1 vs 0, 11/18 이후 체험 91건)",links:[{t:"컨버전2 점검",u:"https://mikefarfaraway.github.io/ffa-boards/dood-c2-check-1125/"},{t:"하드 페이월 실험",u:"https://claude.ai/artifact/HoPGMuroDmTHjfRNmpZT8G"}]},
+  {m:"새 유료결제",c:"100 → 61건 (-39%)",head:"줄어든 39건은 체험 수 감소와 컨버전2 하락이 거의 반씩 만들었습니다.",
+   chart:{type:"steps",unit:"건",items:[{l:"지난주",v:100,kind:"total"},{l:"체험 수 감소",v:-20},{l:"컨버전2 하락",v:-19},{l:"이번 주",v:61,kind:"total"}]},
+   causes:[{t:"확인",x:"체험이 끝난 사람 266 → 213명(-20%) → 약 20건 감소"},{t:"확인",x:"컨버전2 38% → 29% → 약 19건 감소 (컨버전2가 그대로였다면 약 80건)"}],
+   insight:"유입(체험 수)과 제품(컨버전2) 둘 다 빠졌습니다. 한쪽만 고쳐서는 지난주 수준으로 못 돌아갑니다.",
+   todo:"컨버전2는 아래 하드 페이월 판단으로, 체험 수는 광고 증액 효과로 다음 주에 확인",
+   s:"Mixpanel rc_trial_started·converted·cancelled, 11/12~18 vs 11/19~25",links:[{t:"종합 현황판 11/25",u:"https://claude.ai/artifact/C5Ng7KbXdLUgKqwwTZ4Q7E"}]},
+  {m:"설치",c:"2,414 → 1,419 (-41%)",head:"광고 밖 설치가 반토막 났고(-52%), 광고 설치도 광고비가 줄고 CPI가 올라 32% 줄었습니다.",
+   chart:{type:"cols",items:[["11/12",231],["",241],["11/14",415,1],["",715,1],["11/16",322],["",240],["11/18",250],["",211],["11/20",201],["",91],["11/22",206],["",228],["11/24",240],["",242]]},
+   causes:[{t:"확인",x:"Meta 집계 설치 1,273 → 867(-32%), 나머지(오가닉 등) 1,141 → 552(-52%). 감소 폭은 광고 밖에서 더 큼"},{t:"확인",x:"Meta 광고비 57.8만 → 48.8만 원(-16%), CPI ₩454 → ₩563(+24%)"},{t:"확인",x:"11/14~15 이틀에 1,130건 몰림 (평소의 약 2~3배)"},{t:"확인",x:"몰림 제외 하루 평균 257 → 203건 (-21%)"},{t:"미확인",x:"몰림 원인과 이번 주 감소 원인은 확인 전. 11/16 한국 체험 최적화 캠페인 종료, 11/21(토) 91건 저점과 겹침"}],
+   insight:"설치가 줄면 실험 모수가 늦게 쌓여 하드 페이월 판단도 늦어집니다. 광고 2배 증액(11/25 결정)은 이번 주 숫자엔 거의 안 들어갔습니다(추정).",
+   todo:"다음 판에서 증액 후 하루 설치·설치당 광고비 확인 · 11/14~15 몰림 원인은 메타 광고 최적화 프로젝트에서 확인",
+   s:"Mixpanel 일별 intro_completed, Meta 광고 dood_adAccount(목~수 7일 단위), FFA 현재 상태(광고 결정)",links:[{t:"메타 광고 11/20",u:"https://claude.ai/artifact/RcNEehbkU3o1L44CgJG7EC"}]},
+  {m:"갱신 결제",c:"58 → 78건",head:"늘어난 게 아니라 출시 주 구독자의 첫 월간 갱신이 한꺼번에 돌아온 것입니다.",
+   chart:{type:"cols",items:[["11/10",1],["",0],["11/12",2],["",0],["11/14",1],["",0],["11/16",2],["",16,1],["11/18",37,1],["",25,1],["11/20",15,1],["",15,1],["11/22",11,1],["",2],["11/24",7],["",3]]},
+   causes:[{t:"확인",x:"10/17~20 결제분의 한 달 뒤 갱신이 11/17~22에 몰림"}],
+   insight:"이 몰림이 지나면 갱신 결제는 다시 줄어듭니다. 새 결제가 하루 7~9건이면 MRR이 거의 늘지 않는 구간입니다(11/25 종합 현황판 추정).",
+   todo:"첫 월간 갱신율(11/25 기준 64%, 기준 70%) 점검 계속 · 다음 판부터 갱신율을 카드로 올리는 것 검토",
+   s:"Mixpanel rc_renewal_event 일별",links:[{t:"종합 현황판 11/25",u:"https://claude.ai/artifact/C5Ng7KbXdLUgKqwwTZ4Q7E"}]}
+ ],
+ mrr:[{d:"11/2",v:1908},{d:"11/20",v:2678},{d:"11/25",v:2663}],
+ mrrNote:"RevenueCat · 11/25 10:30 KST · 목표 12/31 $5,000",
+ dailyPaid:{start:"2026-10-30",v:[13,8,17,13,11,9,8,10,6,17,12,9,7,13,11,11,12,13,13,27,16,7,10,4,9,7,8,5],partialLast:true}
+};
+/* ===== 아래는 형식. 고치지 않는다 ===== */
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+$('tk').innerHTML=(DATA.takeaways||[]).map(t=>`<li>${esc(t)}</li>`).join('');
+$('why').className='whys';
+const fmtV=(v,f)=>f=='pct'?(v*100).toFixed(1)+'%':v;
+function chart(c){if(!c)return '';const W=360;
+ if(c.type=='hbars'){const mx=Math.max(c.goal||0,...c.items.map(i=>i.v))*1.15,rh=24,lw=120,H=c.items.length*rh+(c.goal?14:4);
+  let g=`<svg viewBox="0 0 ${W} ${H}">`;c.items.forEach((it,i)=>{const y=i*rh+2,w=(it.v/mx)*(W-lw-50);
+   g+=`<text x="0" y="${y+14}" font-size="11" fill="currentColor">${esc(it.l)}</text><rect x="${lw}" y="${y+3}" width="${w}" height="15" rx="3" fill="${it.hl?'var(--dn)':'var(--acc)'}" opacity="${it.hl?1:.75}"/><text x="${lw+w+4}" y="${y+14}" font-size="11" font-weight="700" fill="currentColor">${fmtV(it.v,c.fmt)}</text>`});
+  if(c.goal){const x=lw+(c.goal/mx)*(W-lw-50);g+=`<line x1="${x}" x2="${x}" y1="0" y2="${c.items.length*rh+2}" stroke="currentColor" stroke-dasharray="3 2" opacity=".6"/><text x="${x}" y="${H-1}" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">${esc(c.goalLabel||'')}</text>`}
+  return g+'</svg>'}
+ if(c.type=='steps'){const mx=Math.max(...c.items.filter(i=>i.kind).map(i=>i.v)),rh=24,lw=90,H=c.items.length*rh+4,sc=v=>v/mx*(W-lw-40);let run=0,g=`<svg viewBox="0 0 ${W} ${H}">`;
+  c.items.forEach((it,i)=>{const y=i*rh+2;let x,w,col;if(it.kind){x=0;w=sc(it.v);run=it.v;col='var(--acc)'}else{run+=it.v;x=sc(run);w=sc(-it.v);col='var(--dn)'}
+   g+=`<text x="0" y="${y+14}" font-size="11" fill="currentColor">${esc(it.l)}</text><rect x="${lw+x}" y="${y+3}" width="${w}" height="15" rx="3" fill="${col}"/><text x="${lw+x+w+4}" y="${y+14}" font-size="11" font-weight="700" fill="currentColor">${it.kind?it.v:it.v}${esc(c.unit||'')}</text>`});return g+'</svg>'}
+ if(c.type=='cols'){const H=90,n=c.items.length,mx=Math.max(...c.items.map(i=>i[1])),bw=(W-4)/n;let g=`<svg viewBox="0 0 ${W} ${H}">`;
+  c.items.forEach(([l,v,hl],i)=>{const h=v/mx*(H-26),x=i*bw+2;g+=`<rect x="${x}" y="${H-14-h}" width="${bw-3}" height="${h}" rx="2" fill="${hl?'var(--dn)':'var(--acc)'}" opacity="${hl?1:.6}"><title>${esc(l)} ${v}</title></rect>`;if(hl||i==n-1)g+=`<text x="${x+bw/2-1}" y="${H-17-h}" font-size="9" text-anchor="middle" fill="currentColor">${v}</text>`;if(l)g+=`<text x="${x}" y="${H-2}" font-size="9" fill="currentColor" opacity=".6">${esc(l)}</text>`});return g+'</svg>'}
+ return ''}
+$('why').innerHTML=(DATA.why||[]).map(w=>`<section class="ws"><h3>${esc(w.m)} <span>${esc(w.c)}</span></h3><p class="hd">${esc(w.head)}</p><div>${chart(w.chart)}</div><div><div class="lab">원인</div><ul>${w.causes.map(c=>`<li><span class="tag ${esc(c.t)}">${esc(c.t)}</span>${esc(c.x)}</li>`).join('')}</ul><div class="lab">INSIGHT</div><p class="ins">${esc(w.insight)}</p><div class="lab">TAKEAWAY · 할 일</div><p class="todo">${esc(w.todo)}</p><div class="s">출처: ${esc(w.s)}${(w.links||[]).filter(l=>/^https:\/\//.test(l.u)).map(l=>` · <a href="${esc(l.u)}" target="_blank" rel="noopener">자세히: ${esc(l.t)}</a>`).join('')}</div></div></section>`).join('');
+$('asof').textContent=`데이터 기준 ${DATA.asOf} · ${DATA.source}`;
+$('lead').textContent=DATA.lead;
+const W=DATA.weeks.map(r=>({...r,cpi:r.metaInst?r.spend/r.metaInst:null,c1:r.trial/r.inst,pd:r.paid/7,c2:r.paid/(r.paid+r.cancel)})).map(r=>({...r,tot:r.c1*r.c2}));
+const pct=v=>(v*100).toFixed(1)+'%';
+function spark(vals,goal){const w=200,h=42,mx=Math.max(...vals,goal||0)*1.1,mn=0;
+ const x=i=>i/(vals.length-1)*(w-6)+3,y=v=>h-3-(v-mn)/(mx-mn)*(h-6);
+ let s=`<svg class="sp" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">`;
+ if(goal)s+=`<line x1="0" x2="${w}" y1="${y(goal)}" y2="${y(goal)}" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="3 3"/>`;
+ s+=`<polyline fill="none" stroke="var(--acc)" stroke-width="2" points="${vals.map((v,i)=>x(i)+','+y(v)).join(' ')}"/>`;
+ s+=`<circle cx="${x(vals.length-1)}" cy="${y(vals[vals.length-1])}" r="3.5" fill="var(--acc)"/></svg>`;return s}
+function tile(n,key,fmt,isRate,goal,t,inv){const a=W.at(-1)[key],b=W.at(-2)[key];
+ let d,cls;if(isRate){const pp=(a-b)*100;d=(pp>=0?'▲ ':'▼ ')+Math.abs(pp).toFixed(1)+'%p';cls=Math.abs(pp)<.5?'fl':pp>0?'up':'dn'}
+ else{const r=(a-b)/b*100;d=(r>=0?'▲ ':'▼ ')+Math.abs(r).toFixed(0)+'%';cls=Math.abs(r)<3?'fl':(r>0)!=!!inv?'up':'dn'}
+ return `<div class="k"><div class="n">${n}</div><div class="v">${fmt(a)}</div><div class="d ${cls}">${d} <span class="fl" style="font-weight:400">지난주 ${fmt(b)}</span></div>${spark(W.map(r=>r[key]).filter(v=>v!=null),goal)}<div class="t">${t}</div></div>`}
+const m=DATA.mrr,ma=m.at(-1).v;
+const mrrTile=`<div class="k"><div class="n">MRR</div><div class="v">$${ma.toLocaleString()}</div><div class="d ${ma>=m.at(-2).v?'up':'dn'}">${ma>=m.at(-2).v?'▲':'▼'} $${Math.abs(ma-m.at(-2).v).toLocaleString()} <span class="fl" style="font-weight:400">${m.at(-2).d} $${m.at(-2).v.toLocaleString()}</span></div>${spark(m.map(r=>r.v),5000)}<div class="t">${DATA.mrrNote}</div></div>`;
+function bigline(key,goal,label){const vals=W.map(r=>r[key]),w=520,h=150,pl=38,pr=72,pt=18,pb=22,mx=Math.max(goal,...vals)*1.15;
+ const x=i=>pl+i/(vals.length-1)*(w-pl-pr),y=v=>pt+(1-v/mx)*(h-pt-pb);
+ let g=`<svg viewBox="0 0 ${w} ${h}"><line x1="${pl}" x2="${w-pr}" y1="${y(goal)}" y2="${y(goal)}" stroke="var(--up)" stroke-dasharray="5 4"/><text x="${w-pr+4}" y="${y(goal)+4}" font-size="12" fill="var(--up)" font-weight="700">${label}</text>`;
+ g+=`<polyline fill="none" stroke="var(--acc)" stroke-width="3" points="${vals.map((v,i)=>x(i)+','+y(v)).join(' ')}"/>`;
+ vals.forEach((v,i)=>{const last=i==vals.length-1;g+=`<circle cx="${x(i)}" cy="${y(v)}" r="${last?6:4}" fill="var(--acc)"/><text x="${x(i)}" y="${y(v)-10}" font-size="${last?14:12}" font-weight="${last?800:600}" text-anchor="middle" fill="currentColor">${(v*100).toFixed(1)}%</text><text x="${x(i)}" y="${h-4}" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">${esc(W[i].w)}</text>`});
+ return g+'</svg>'}
+function hk(cls,badge,n,key,goal,gl,note){const a=W.at(-1)[key],b=W.at(-2)[key],pp=(a-b)*100;
+ return `<div class="hk ${cls}"><span class="badge ${cls=='main'?'':'sub'}">${badge}</span><div class="n">${n}</div><div class="v">${pct(a)}</div><div class="d ${pp>0?'up':'dn'}">${pp>0?'▲':'▼'} ${Math.abs(pp).toFixed(1)}%p <span class="fl" style="font-weight:400">지난주 ${pct(b)}</span></div><div class="g">목표 ${(goal*100).toFixed(0)}%까지 ${((goal-a)*100).toFixed(1)}%p · ${note}</div>${bigline(key,goal,gl)}</div>`}
+$('hero').innerHTML=hk('main','KEY METRIC','컨버전1 (설치→체험)','c1',.15,'목표 15%','주 체험 시작 ÷ 주 설치')+`<div class="subs">${hk('subk','보조 지표 1','컨버전2 (체험→결제)','c2',.35,'목표 35%','근사치: 결제 ÷ (결제+체험 해지)')}${hk('subk','보조 지표 2','종합 컨버전 (설치→유료)','tot',.05,'목표 5%','컨버전1 × 컨버전2')}</div>`;
+$('tiles').innerHTML=mrrTile+
+ tile('새 유료결제 (주)','paid',v=>Math.round(v)+'건',false,0,`하루 평균 ${W.at(-1).pd.toFixed(1)}건`)+
+ tile('CPI (Meta 설치당 광고비)','cpi',v=>'₩'+Math.round(v).toLocaleString(),false,0,'Meta 광고비 ÷ Meta 집계 설치 · 낮을수록 좋음',true)+
+ tile('설치 (주)','inst',v=>v.toLocaleString(),false,0,'intro_completed 기준')+
+ tile('체험 시작 (주)','trial',v=>v+'건',false,0,'');
+const COLS=[['inst','n'],['trial','n'],['c1','p',.15],['paid','n'],['pd','d'],['c2','p',.35],['tot','p',.05],['renew','n'],['spend','w'],['cpi','w',null,1]];
+function cell(r,prev,[k,t,goal,inv]){const v=r[k];if(v==null||(t=='w'&&!v))return '<td class="fl">—</td>';let txt=t=='p'?pct(v):t=='d'?v.toFixed(1):t=='w'?'₩'+Math.round(v).toLocaleString():v.toLocaleString();
+ let cls='';if(goal)cls=v>=goal?'okv':'badv';
+ let d='';if(prev&&prev[k]){const pv=prev[k];if(t=='p'){const pp=(v-pv)*100;d=`<span class="dl ${Math.abs(pp)<.5?'fl':pp>0?'up':'dn'}">${pp>0?'▲':pp<0?'▼':''}${Math.abs(pp).toFixed(1)}%p</span>`}
+  else{const r2=pv?(v-pv)/pv*100:0;d=`<span class="dl ${Math.abs(r2)<3?'fl':(r2>0)!=!!inv?'up':'dn'}">${r2>0?'▲':r2<0?'▼':''}${Math.abs(r2).toFixed(0)}%</span>`}}
+ const bg=goal?` style="background:${v>=goal?'color-mix(in srgb,var(--up) 12%,transparent)':'color-mix(in srgb,var(--dn) '+Math.round(Math.min(1,(goal-v)/goal)*28+4)+'%,transparent)'}"`:'';
+ return `<td${bg}><span class="${cls}">${txt}</span>${d}</td>`}
+$('wk').querySelector('tbody').innerHTML=W.map((r,i)=>`<tr class="${i==W.length-1?'now':''}"><td>${esc(r.w)}</td>${COLS.map(c=>cell(r,W[i-1],c)).join('')}</tr>`).join('');
+const P=DATA.dailyPaid,mx=Math.max(...P.v),s0=new Date(P.start+'T00:00:00');
+const lab=i=>{const d=new Date(s0);d.setDate(d.getDate()+i);return (d.getMonth()+1)+'/'+d.getDate()};
+$('bars').innerHTML=P.v.map((v,i)=>`<div class="${P.partialLast&&i==P.v.length-1?'part':''}" style="height:${v/mx*100}%" data-l="${lab(i)} ${v}건"></div>`).join('');
+$('xl').innerHTML=P.v.map((v,i)=>`<span>${i%4==0?lab(i):''}</span>`).join('');
+</script>
+</div></body></html>
